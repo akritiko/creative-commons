@@ -1,3 +1,5 @@
 # Original Content available under CC license
 
-Original Content published under CC license. To be updated...
+This repository is the collection of original work created by me available under creative commons license. Unless otherwise explicitly stated the content of this collection is published under Creative Commons BY-NC-SA 4.0 License.
+
+
