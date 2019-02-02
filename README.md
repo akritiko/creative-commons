@@ -2,7 +2,7 @@
 
 This repository is the collection of original work created by me that I decided to make available under creative commons license. Unless otherwise explicitly stated the content of this collection is published under [Creative Commons BY-NC-SA 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-NOTE: Especially for the source code included in this collection, all source code files, unless explicitly stated are available under the [MIT License](https://opensource.org/licenses/MIT).
+__NOTE:__ Especially for the source code included in this collection, all source code files, unless explicitly stated are available under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Sub Collections
 
@@ -21,3 +21,13 @@ While browsing the collection you might come across the following notation:
 
 - __[Essay - DESCRIPTION]__ Meaning that the content has the form of an essay, that is, text. Usually found in the format of .doc, .docx and / or .pdf.
 - __[Code - PROGRAMING LANGUAGE - DESCRIPTION]__ Meaning that the content has the form of code. The "PROGRAMING LANGUAGE" part clarifies the type of the programing language.
+
+- __[Essay & Code - PROGRAMING LANGUAGE - DESCRIPTION]__ Meaning there's a mixture of essays and source code.
+
+## Language
+
+Essays and source code documentation could be in Greek on English language depending on the scope of the work. 
+
+## Functionality
+
+Some of the project contain executables as well. Some of the projects are really old (circa 2003). I cannot guarantee the functionality of those executables to contemporary machines.
