@@ -1,3 +1,3 @@
-# Personal Collection under Creative Commons License 
+# Original Content available under CC license
 
 Original Content published under CC license. To be updated...
