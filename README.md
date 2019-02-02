@@ -32,4 +32,4 @@ Essays and source code documentation could be in Greek on English language depen
 
 ## Functionality
 
-Some of the project contain executables as well. Some of the projects are really old (circa 2003). I cannot guarantee the functionality of those executables to contemporary machines.
+Some of the projects contain executables as well. Some of the projects are really old (circa 2003). I cannot guarantee the functionality of those executables to contemporary machines.
