@@ -2,7 +2,9 @@
 
 This repository is the collection of original work created by me that I decided to make available under creative commons license. Unless otherwise explicitly stated the content of this collection is published under [Creative Commons BY-NC-SA 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-__NOTE:__ Especially for the source code included in this collection, all source code files, unless explicitly stated are available under the [MIT License](https://opensource.org/licenses/MIT).
+__NOTE:__ 
+
+Especially for the source code included in this collection, all source code files, unless explicitly stated are available under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Sub Collections
 
