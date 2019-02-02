@@ -1,0 +1,23 @@
+debugger.PreviousInspectorExpressions.1[0]=myCoords
+debugger.PreviousInspectorExpressions.2[0]=k
+debugger.PreviousInspectorExpressions.3[0]=i
+debugger.PreviousInspectorExpressions.4[0]=j
+debugger.PreviousInspectorExpressions.5[0]=theseisMonadon
+debugger.breakpointgroups.1[0]=Breakpoints
+debugger.breakpoints.1[0]=1  09  Graphs2.c3  1651  11  10  1  10  11 Breakpoints0  0  0   -1
+debugger.breakpoints.2[0]=1  08  Graphs.c3  1721  11  10  1  10  11 Breakpoints0  0  0   -1
+debugger.evaluateexpressions.1[0]=thesiTeleutaiasPollaplisStilis
+debugger.evaluateexpressions.10[0]=theseisMonadon[arxidi] [0]
+debugger.evaluateexpressions.11[0]=theseisMonadon[arxidi] [2]
+debugger.evaluateexpressions.12[0]=theseisMonadon[arxidi] [2] == pZeygnyonton
+debugger.evaluateexpressions.13[0]=theseisMonadon
+debugger.evaluateexpressions.14[0]=myMultiones
+debugger.evaluateexpressions.15[0]=myCoords
+debugger.evaluateexpressions.2[0]=bima
+debugger.evaluateexpressions.3[0]=l
+debugger.evaluateexpressions.4[0]= l = ( kolos * ( N - 1 ) - 1 )
+debugger.evaluateexpressions.5[0]= l = ( kolos * ( N - 1 ) - 1 );
+debugger.evaluateexpressions.6[0]=theseisMonadon[arxidi][1]  == thesiTeleutaiasPollaplisStilis+1
+debugger.evaluateexpressions.7[0]=theseisMonadon[5][1]
+debugger.evaluateexpressions.8[0]=theseisMonadon[arxidi] [1]
+debugger.evaluateexpressions.9[0]=heseisMonadon[arxidi] [1]

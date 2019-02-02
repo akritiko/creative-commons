@@ -1,0 +1,4 @@
+select id,name from Person  where id < 16 Minus select id2,name2 from Person2 where name2 = 'Papadopoulos';
+select id from Person Intersection select id2 from Person2 ;
+select name,id from Person  where id >=16 UNion Select name2,id2 from Person2 where age2 > 102;
+select age,name,id2 from Person,Person2  where name = 'Papadopoulos' and id2 =4;

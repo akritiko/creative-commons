@@ -1,0 +1,5 @@
+VAR a;
+VAR b;
+a:=10;
+b:=11-a-1;
+PRINT b

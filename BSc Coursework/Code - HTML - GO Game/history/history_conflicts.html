@@ -1,0 +1,185 @@
+<html>
+
+<head>
+	<title>Το κλασικό παιχνίδι Go (η Ιστορία)</title>
+
+	<!-- Το javascript αυτό περιέχει απλώς έναν πίνακα με φράσεις κάθε μια από τις οποίες αποτελεί μίνι περιγραφή ενός εσωτερικού link -->
+	<script language="JavaScript">
+
+		<!-- Begin
+		var summaries = new Array();
+		summaries[1]='<b> Αρχική Σελίδα: </b> Επιστρέφετε στην αρχική σελίδα του site!'
+		summaries[2]='<b> Ιστορία: </b> Εδώ μπορείτε να βρείτε πληροφορίες σχετικά με την προέλευση και χρονολόγηση του GO!'
+		summaries[3]='<b> Εκμάθηση: </b> Μάθετε τους κανόνες του GO μέσα από απλά μαθήματα, ή κατεβάστε κάποιο από τα εγχειρίδια που παρέχει η ιστοσελίδα μας!'
+		summaries[4]='<b> Downloads: </b> Εδώ σας δίνετε η δυνατότητα να κατεβάσετε διάφορα αρχεία απευθείας ή μέσω του ftp server μας!'
+		summaries[5]='<b> Applet: </b> Κάντε μια γρήγορη περιήγηση στους κανόνες του GO χρησιμοποιώντας το tutorial σε μορφή java applet που παρέχει το site μας!'
+		summaries[6]='<b> Παραπομπές: </b> Ανατρέξτε σε άλλους διαδικτυακούς τόπους που παρέχουν πληροφορίες για το παιχνίδι GO!'
+		summaries[7]='<b> Επικοινωνία: </b> Εδώ μπορείτε να βρειτε περισσότερες πληροφορίες για τους κατασκευαστές του site καθώς και πως να επικοινωνήσετε μαζί τους!'
+		//-->
+
+	</script>
+</head>
+
+<body bgcolor="#C1B711" link="#4E4E09" vlink="898908">
+	<table border="0">
+		<tr>
+			<td colspan="3">
+			<center>
+				<img src="../gologo.jpg">
+			</center><br>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+			<font size="+1">
+				<table border="0" width="40%" align="center">
+					<tr>
+
+					</tr>
+					<tr>
+						<td colspan="2" align="center"><b><a href="../tutorial/tutorial.html"> Εκμάθηση </a></b></td>
+						<td width="8%" align="center"><b><a href="../downloads/downloads.html"> Downloads </a></b></td>
+						<td colspan="2" align="center"><b><a href="../communication/communication.html"> Επικοινωνία </a></b></td>
+					</tr>
+					<tr>
+						<td align="center" width="8%"><b><a href="../index.html"> Κεντρική </a></b></td>
+						<td align="center" width="8%"><b><a href="history.html"> Ιστορία </a></b></td>
+						<td> </td>
+						<td align="center" width="8%"><b><a href="../applet/applet.html"> Applet </a></b></td>
+						<td align="center" width="8%"><b><a href="../links/links.html"> Παραπομπές </a></b></td>
+					</tr>
+				</table>
+			</font><br>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" valign="top">
+				<!-- Εσωτερικός πίνακας που παρουσιάζει το imagemap και την περιγραφή των εσωτερικών δεσμών -->
+				<table border="0" bgcolor="#808000">
+					<tr>
+						<td align="center" bgcolor="#C1B711"> <img src="../goboard1.gif" border="0" alt="The Go Board (imagemap)" usemap="#contents"> </td>
+
+							<!-- Εδώ υλοποιείται το ImageMap της φωτογραφίας goboard -->
+							<map name="contents">
+								<area
+									shape="circle"
+									coords="45,45,25"
+									HREF ="../index.html"
+									onmouseover="Details.innerHTML = summaries[1];"
+								>
+								<area
+									shape="circle"
+									coords="140,40,10,"
+									HREF ="../tutorial/tutorial.html"
+									onmouseover="Details.innerHTML = summaries[3];"
+								>
+								<area
+									shape="circle"
+									coords="85,85,10,"
+									HREF ="history.html"
+									onmouseover="Details.innerHTML = summaries[2];"
+								>
+								<area
+									shape="circle"
+									coords="210,35,25"
+									HREF ="../downloads/downloads.html"
+									onmouseover="Details.innerHTML = summaries[4];"
+								>
+								<area
+									shape="circle"
+									coords="45,150,25"
+									HREF ="../applet/applet.html"
+									onmouseover="Details.innerHTML = summaries[5];"
+								>
+								<area
+									shape="circle"
+									coords="40,190,20"
+									HREF ="../links/links.html"
+									onmouseover="Details.innerHTML = summaries[6];"
+								>
+								<area
+									shape="circle"
+									coords="205,235,25"
+									HREF ="../communication/communication.html"
+									onmouseover="Details.innerHTML = summaries[7];"
+								>
+							</map>
+					</tr>
+					<tr>
+						<td bgcolor="#C1B711" align="center"> <a id="Details"> <b> Βάλτε το ποντίκι πάνω σε μια φωτισμένη περιοχή (όπου υπάρχει κίτρινο περίγραμμα) για να δείτε το περιεχόμενο του εκάστοτε link. </b> </a> </td>
+					</tr>
+					<tr>
+						<td bgcolor="#C1B711" >
+							<font color="#FEF9A9"> <b><br>
+								<u><center>ΕΠΙΚΟΙΝΩΝΙΑ</u>:</center>
+								<ul>
+									<li type="square">Κρητικός Απόστολος <br> <i> <a href="mailto:akritiko@csd.auth.gr">(akritiko@csd.auth.gr)</a> </i> </li>
+									<li type="square">Μποφιλάκη Κατερίνα <br> <i> <a href="mailto:ampofila@csd.auth.gr">(ampofila@csd.auth.gr)</a> </i> </li>
+									<li type="square">Σκαλιστής Στέφανος <br> <i> <a href="mailto:sskalist@csd.auth.gr">(sskalist@csd.auth.gr)</a> </i> </li>
+									<li type="square">Στέα Ελένη - Μαρία <br> <i> <a href="mailto:strouby@csd.auth.gr"> (strouby@csd.auth.gr)</a> </i></li>
+								</ul>
+
+							</b> </font> </td>
+					</tr>
+				</table>
+			</td>
+			<td colspan="2" valign="top">
+				<tt><div style="TEXT-ALIGN: justify">
+
+					<p>
+						<h3><center> Το Go στην Αρχαία Κίνα </center></h3>
+					</p>
+
+					<p>
+						<h4><center> Οι διαφωνίες </center></h4>
+					</p>
+
+					<p>
+						Το κινέζικο παιχνίδι Weiqi, γνωστό κυρίως με την Ιαπωνική ονομασία του (Go - προφέρεται Γκο - ) , γνώρισε μεγάλη δυσφήμιση από διάφορους ιστορικούς παιχνιδιών τέτοιου τύπου, με χαρακτηριστικό παράδειγμα τον J.R. Murray, ιστορικό που ασχολήθηκε με την ιστορία του σκακιού.
+					</p>
+					<p>
+						Ο συγκεκριμένος επιστήμονας δείχνει μια γενικότερη περιφρόνηση ως προς τα κινέζικα παιχνίδια που εμφανίστηκαν πριν τη χριστιανική εποχή και είχαν σχέση με διατάξεις πάνω σε ταμπλό.
+					</p>
+					<p>
+						Ισχυρίζεται δε ότι η εμφάνιση του Go χρονολογείται στα 1000 μ.Χ, πράγμα που αποδεικνύει, κατά τη γνώμη του, ότι οι κινέζοι πάντα συνηθίζουν να υπερβάλουν για την αρχαιότητα των παιχνιδιών τους.
+					</p>
+					<p>
+						Απέναντι από τους επικριτές των αρχαίων κινέζικων παιχνιδιών γενικά αλλά και συγκεκριμένα του Go, έρχονται να αντιταχθούν επιστήμονες όπως ο Bernhard Karlgren, σινολόγος, όπου κριτίκαρε έντονα αυτούς που όπως είπε συνηθίζουν να επικρίνουν τις ασιατικές αρχαιότητες. Αναφέρει επίσης χαρακτηριστικά: &laquo; Αν και πρόκειται για κείμενα που φαίνονται επιστημονικά οι κατηγορίες που αυτά περιλαμβάνουν  βασίζονται στην πλειονότητά τους σε υποκειμενικά, ανεπαρκή και ανάξια λόγου επιχειρήματα. &raquo;
+					</p>
+					<p>
+						Μαζί με τον Bernhard βέβαια τάσσονται και άλλοι επιστήμονες όπου οι Dr. Ogawa Dakuji και Wolfram Eberhand που με άρθρα και μελέτες στηρίζουν την αρχαιότητα του Go.
+					</p>
+					<p>
+						Όλα αυτά βέβαια θα σας φαίνονται κάπως ελλιπή σαν στοιχεία για να πείσουν ότι το Go  όντως χρονολογείται πριν το 1000 μ.Χ όπως υποστηρίζει ο J.R. Murray.
+					</p>
+					<p>
+						Πράγματι ούτε κι εμείς μπορούσαμε να βασιστούμε απλά σε ισχυρισμούς (έστω και επιστημόνων) που στηρίζουν την αρχαιότητα του Go στο γεγονός ότι αυτό αναφέρεται στις αναλέκτους του Κομφούκιου που χρονολογούνται στα 551 - 479 π.Χ.
+					</p>
+					<p>
+						Ερευνώντας ωστόσο λίγο παραπάνω ανακαλύψαμε ότι η παλαιότητα του Go μπορεί να γίνει πλέον σαφέστερη αφού υπάρχουν και αρχαιολογικά ευρήματα που την πιστοποιούν.
+					</p>
+					<p>
+						Συγκεκριμένα για την Κίνα αυτά περιλαμβάνουν μια πλάκα 17 Χ 17 που χρονολογείται πριν το 200 μ.Χ και βρέθηκε στο κράτος Wandu το 1945 ενώ πλέον φιλοξενείται από το Ιστορικό Μουσείο του Beijing.
+					</p>
+					<p>
+						Όμως τα ευρήματα δεν τελειώνουν εδώ. Υπάρχει ακόμη μια μεταξοτυπία που απεικονίζει μια ασιάτισσα να παίζει Go  σε μια πλάκα επίσης 17 Χ 17. Η συγκεκριμένη μεταξοτυπία ήρθε στο φως το 1974 στο Torfan και χρονολογείται γύρω στο 750 μ.Χ.
+					</p>
+					<p>
+						Όλα τα παραπάνω μας οδηγούν να χρονολογήσουμε με ασφάλεια το Go γύρω στα 250 μ.Χ με μια μικρή επιφύλαξη για ακόμη παλαιότερη εμφάνιση, και προέλευση από την Κίνα.
+					</p>
+
+					<p align="right">
+						&lt;&lt; <a href="history.html"><b>Προηγούμενο</b></a> <a href="history_terms.html"><b>Επόμενο</b></a> &gt;&gt;
+					</p>
+
+				</div></tt>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#808000" colspan="3">
+				<center> <blink> <font color="#C1B711"> <b> home &raquo; history (2/5)</b> </font> </blink> </center>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

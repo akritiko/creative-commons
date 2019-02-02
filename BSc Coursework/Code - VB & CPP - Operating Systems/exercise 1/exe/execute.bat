@@ -1,0 +1,1 @@
+osmachine 2> results.txt

@@ -1,0 +1,451 @@
+%{
+
+/* ERGASIA METAGLOTTISTES  */
+/* KRITIKOS APOSTOLOS      */
+/* AEM: 914                */
+/* SYNTAKTIKH ANALYSH      */
+
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#define MHNYMA 0
+
+/* DHLOSEIS SYNTAKTIKHS ANALYSHS */
+
+#define SYM_TABLE_SIZE 41
+#define MAX_CROSS_LINKS 1
+#define NAME_MAX  32
+
+#define TRUE  1
+#define FALSE 0
+
+typedef struct symbol_tag
+{
+
+    unsigned char name[NAME_MAX+1];
+    int timi;
+    int disposable;
+    int lvalue;
+    struct symbol_tag *Next_in_Cross_Link;
+    struct symbol_tag *NextSymbol;
+    struct symbol_tag *PrevSymbol;
+    
+} symbol;
+
+symbol * Cross_Link_Head[MAX_CROSS_LINKS];
+
+typedef struct hash_tab
+{
+
+    int numbsymbols;
+    symbol * table[SYM_TABLE_SIZE];
+
+} hash_table;
+
+hash_table ht;
+
+int TopOfStack=-1;
+
+symbol * vs[30];
+symbol * Symbol_free=NULL; /* list of recycled symbols */
+symbol * p,*p1,*p2,*p3;
+
+%}
+
+%union
+{
+
+    int   yint;
+    char  ystr[81];
+    int   nonterm;
+    
+}
+
+/* TOKENS */
+
+%token <yint> PRINT VAR
+%token <ystr> DEC_CONST
+%token <ystr> '(' ')'
+%token <ystr> '+' '-' '*' '/'
+%token <ystr> '=' ';' '='
+%token <ystr> ID
+
+%type <nonterm> Prog Dlist Slist
+%type <nonterm> Decl Var Literal Stmt
+%type <nonterm> Simple InParenthesis Factor
+%type <nonterm> Term Expr 
+
+
+%%
+
+/* GRAMMATIKH (H THS EKFONHSHS TROPOPOIHMENH) */
+
+Prog		:  Dlist Slist
+		   {
+			#if MHNYMA
+				   printf("/1\n");
+			#endif
+                   }
+                ;
+                
+Dlist		:  Decl ';' Dlist
+		   {
+		   	#if MHNYMA
+		   		   printf("/2\n");
+		   	#endif
+                   }
+                |  /* EMPTY */
+                   { 
+			#if MHNYMA
+				   printf("/3\n");
+			#endif
+                   }
+                ;
+                
+Decl		:  "VAR" Var
+                   { 
+			#if MHNYMA
+				   printf("/4\n");
+			#endif
+                   }
+                ;
+                
+Slist		:  Stmt
+                   { 
+			#if MHNYMA
+				   printf("/5\n");
+			#endif
+                   }
+                |  Slist ';' Stmt
+                   { 
+			#if MHNYMA
+				   printf("/6\n");
+			#endif
+                   }
+                ;
+                
+Simple	 	: Literal
+		  { 
+			#if MHNYMA
+				   printf("/7\n");
+			#endif
+                  }
+		| Var
+		  { 
+			#if MHNYMA
+				   printf("/8\n");
+			#endif
+                  }
+                ;
+                
+Var		:  ID
+                   { 
+			#if MHNYMA
+				   printf("/9\n");
+			#endif
+			
+			p1=findsymb($1);
+			if(!p1) {
+			   p1=new_symbol($1);
+			   Link_Symbol_to_Cross_Link(p1);
+			   addsymb(p1);
+			}
+			p1=create_id(p1);
+			push_vs(p1);
+                   }
+                ;
+                
+Literal		: DEC_CONST
+                  { 
+			#if MHNYMA
+				   printf("/10\n");
+			#endif
+			
+			p1=new_symbol($1);
+			p1->disposable=TRUE;
+			p1->lvalue=FALSE;
+			p1->timi=atoi($1);
+			push_vs(p1);
+                  }
+                ;
+                
+InParenthesis   : Simple
+                  {
+			#if MHNYMA
+				   printf("/11\n");
+			#endif
+                  }
+                | '('  Expr  ')'
+		  {
+			#if MHNYMA
+				   printf("/12\n");
+			#endif
+		  }
+                ;
+
+Factor          : InParenthesis
+                  {
+			#if MHNYMA
+				   printf("/13\n");
+			#endif
+                  }  
+                | Factor '*' InParenthesis
+                  {
+			#if MHNYMA
+				   printf("/14\n");
+			#endif
+			
+			p3=pop_vs();
+			p1=pop_vs();
+			p=new_symbol("");
+			p->timi=p1->timi * p3->timi;
+			p->disposable=TRUE;
+			p->lvalue=TRUE;
+			p->Next_in_Cross_Link=NULL;
+			p->NextSymbol=NULL;
+			p->PrevSymbol=NULL;
+			discard_symbol(p1);
+			discard_symbol(p3);
+                        push_vs(p);
+                  }
+                | Factor '/' InParenthesis
+                  {
+			#if MHNYMA
+				   printf("/15\n");
+			#endif
+			
+			p3=pop_vs();
+			p1=pop_vs();
+			p=new_symbol("");
+			p->timi=p1->timi / p3->timi;
+			p->disposable=TRUE;
+			p->lvalue=TRUE;
+			p->Next_in_Cross_Link=NULL;
+			p->NextSymbol=NULL;
+			p->PrevSymbol=NULL;
+			discard_symbol(p1);
+			discard_symbol(p3);
+			push_vs(p);
+                  }
+                ;
+                
+Term            : Factor
+                  {
+			#if MHNYMA
+				   printf("/16\n");
+			#endif
+                  }
+		| Term '+' Factor
+                  {
+			#if MHNYMA
+				   printf("/17\n");
+			#endif
+			
+			p3=pop_vs();
+			p1=pop_vs();
+			p=new_symbol("");
+			p->timi=p1->timi + p3->timi;
+			p->disposable=TRUE;
+			p->lvalue=TRUE;
+			p->Next_in_Cross_Link=NULL;
+			p->NextSymbol=NULL;
+			p->PrevSymbol=NULL;
+			discard_symbol(p1);
+			discard_symbol(p3);
+                        push_vs(p);
+                  }
+		| Term '-' Factor
+                  {
+			#if MHNYMA
+				   printf("/18\n");
+			#endif
+			
+			p3=pop_vs();
+			p1=pop_vs();
+			p=new_symbol("");
+			p->timi=p1->timi - p3->timi;
+			p->disposable=TRUE;
+			p->lvalue=TRUE;
+			p->Next_in_Cross_Link=NULL;
+			p->NextSymbol=NULL;
+			p->PrevSymbol=NULL;
+			discard_symbol(p1);
+			discard_symbol(p3);
+                        push_vs(p);
+                  }
+                ;
+                   
+Stmt		:  Var '=' Expr
+                   { 
+			#if MHNYMA
+				   printf("/19\n");
+			#endif
+			
+			p3=pop_vs();
+			p1=pop_vs();
+			p=findsymb(p1->name);
+			p->timi=p3->timi;
+			discard_symbol(p1);
+			discard_symbol(p3);
+                        printf("\nThe expression has the value: %d\n",p3->timi); 
+                   }
+                |  "PRINT" Var
+                   { 
+			#if MHNYMA
+				   printf("/20\n");
+			#endif
+                   }
+                ;
+
+Expr		: Term
+		  { 
+			#if MHNYMA
+				   printf("/21\n");
+			#endif			
+                  }
+                ;
+%%
+
+void Init_Hash_Table(void)
+{  int i;
+
+   for(i=0; i<SYM_TABLE_SIZE; i++)
+      ht.table[i]=NULL;
+}
+
+void Init_Cross_Link_Head(void)
+{  int i;
+
+   for(i=0; i<MAX_CROSS_LINKS; i++)
+      Cross_Link_Head[i]=NULL;
+}
+
+void push_vs(symbol *p)
+{
+   vs[++TopOfStack]=p;
+}
+
+symbol *pop_vs(void)
+{
+   return(vs[TopOfStack--]);
+}
+
+symbol *new_symbol(char *name)
+{  symbol *symbp;
+
+   if(!Symbol_free)
+      symbp=(symbol *)malloc(sizeof(symbol));
+   else
+   {
+      symbp=Symbol_free;
+      Symbol_free=Symbol_free->Next_in_Cross_Link;
+   }
+   memset(symbp,0,sizeof(symbol));
+   strncpy(symbp->name,name,(strlen(name)>NAME_MAX)?NAME_MAX:strlen(name));
+   symbp->timi=0;
+   symbp->disposable=FALSE;
+   symbp->lvalue=TRUE;
+   symbp->Next_in_Cross_Link=NULL;
+   symbp->NextSymbol=NULL;
+   symbp->PrevSymbol=NULL;
+   return(symbp);
+}
+
+int mkkey(char *s)
+{  char *p;
+   int athr=0;
+
+   for(p=s; *p; p++) athr=athr+(*p);
+   return (athr % SYM_TABLE_SIZE);
+}
+
+void Link_Symbol_to_Cross_Link(symbol *symbp)
+{  symbol *p;
+   int lev;
+
+   if(!symbp)
+      return;
+   p=Cross_Link_Head[0];
+   if(p)
+   {
+      for(; p->Next_in_Cross_Link; p=p->Next_in_Cross_Link);
+      p->Next_in_Cross_Link=symbp;
+   }
+   else
+      Cross_Link_Head[0]=symbp;
+}
+
+void addsymb(symbol *symbp)
+{  int i;
+   symbol *p;
+
+   i=mkkey(symbp->name);
+   p=ht.table[i];
+   symbp->NextSymbol=p;
+   symbp->PrevSymbol=NULL;
+   if(p) p->PrevSymbol=symbp;
+   ht.table[i]=symbp;
+   ht.numbsymbols++;
+}
+
+symbol *findsymb(char *onoma)
+{  int i;
+   symbol *p;
+
+   i=mkkey(onoma);
+   p=ht.table[i];
+   while(p && (strcmp(p->name,onoma) !=0))
+      p=p->NextSymbol;
+   return(p);
+}
+
+void discard_symbol(symbol *symbp)
+{
+   if(symbp)
+   {
+      if(symbp->disposable)
+      {
+         symbp->Next_in_Cross_Link=Symbol_free;
+         Symbol_free=symbp;
+      }
+   }
+}
+
+symbol *create_id(symbol *symbp)
+{  symbol *p;
+  
+   p=new_symbol("");
+   memcpy(p,symbp,sizeof(symbol));
+   p->disposable=TRUE;
+   p->lvalue=TRUE;
+   p->Next_in_Cross_Link=NULL;
+   p->NextSymbol=NULL;
+   p->PrevSymbol=NULL;
+   return(p);
+}
+
+void yyerror(char *s)
+{
+   printf(" ");
+   fputs(s,stderr); putc('\n',stderr);
+}
+
+main(void)
+{
+   Init_Hash_Table();
+   Init_Cross_Link_Head();
+   yyparse();
+}
+
+
+
+
+
+
+
+
+
+

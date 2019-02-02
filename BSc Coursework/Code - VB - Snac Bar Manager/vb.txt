@@ -1,0 +1,6 @@
+Label		lbl
+Textbox		txt
+Button		cmd
+Form		frm
+Menou		mnu
+Groupbox	grb

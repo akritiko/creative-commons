@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY kb 'http://protege.stanford.edu/kb#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+]>
+<rdf:RDF xmlns:rdf="&rdf;"
+	 xmlns:kb="&kb;"
+	 xmlns:rdfs="&rdfs;">
+<kb:service rdf:about="&kb;KB_301045_Instance_40"
+	 kb:name="Twitter"
+	 rdfs:label="Twitter"/>
+<kb:service rdf:about="&kb;KB_301045_Instance_41"
+	 kb:name="Youtube"
+	 rdfs:label="Youtube"/>
+<kb:service rdf:about="&kb;KB_301045_Instance_42"
+	 kb:name="Flickr"
+	 rdfs:label="Flickr"/>
+<kb:account rdf:about="&kb;KB_301045_Instance_43"
+	 kb:name="Twitter"
+	 kb:uniqueURL="http://twitter.com/akritiko"
+	 rdfs:label="http://twitter.com/akritiko"/>
+<kb:user rdf:about="&kb;KB_301045_Instance_44"
+	 kb:email="akritiko@gmail.com"
+	 kb:fullname="Apostolos Kritikos"
+	 kb:nickname="akritiko"
+	 rdfs:label="akritiko">
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_41"/>
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_42"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_50"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_51"/>
+	<kb:selfHosted rdf:resource="&kb;KB_301045_Instance_54"/>
+	<kb:selfHosted rdf:resource="&kb;KB_301045_Instance_56"/>
+</kb:user>
+<kb:user rdf:about="&kb;KB_301045_Instance_45"
+	 kb:email="asynadak@somewhere.com"
+	 kb:nickname="asynadak"
+	 rdfs:label="asynadak">
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_42"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_48"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_53"/>
+</kb:user>
+<kb:user rdf:about="&kb;KB_301045_Instance_46"
+	 kb:email="chzigkol@notavailable.com"
+	 kb:fullname="Christos"
+	 kb:nickname="chzigkol"
+	 rdfs:label="chzigkol">
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:memberOf rdf:resource="&kb;KB_301045_Instance_41"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_47"/>
+	<kb:contacts rdf:resource="&kb;KB_301045_Instance_53"/>
+	<kb:selfHosted rdf:resource="&kb;KB_301045_Instance_55"/>
+</kb:user>
+<kb:contact rdf:about="&kb;KB_301045_Instance_47"
+	 kb:isFollower="true"
+	 rdfs:label="asynadak">
+	<kb:atService rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:ofUser rdf:resource="&kb;KB_301045_Instance_45"/>
+</kb:contact>
+<kb:contact rdf:about="&kb;KB_301045_Instance_48"
+	 kb:isFollower="true"
+	 rdfs:label="chzigkol">
+	<kb:atService rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:ofUser rdf:resource="&kb;KB_301045_Instance_46"/>
+</kb:contact>
+<kb:contact rdf:about="&kb;KB_301045_Instance_50"
+	 kb:isFollower="true"
+	 rdfs:label="chzigkol">
+	<kb:atService rdf:resource="&kb;KB_301045_Instance_41"/>
+	<kb:ofUser rdf:resource="&kb;KB_301045_Instance_46"/>
+</kb:contact>
+<kb:contact rdf:about="&kb;KB_301045_Instance_51"
+	 kb:isFollower="true"
+	 rdfs:label="asynadak">
+	<kb:atService rdf:resource="&kb;KB_301045_Instance_42"/>
+	<kb:ofUser rdf:resource="&kb;KB_301045_Instance_45"/>
+</kb:contact>
+<kb:contact rdf:about="&kb;KB_301045_Instance_53"
+	 kb:isFollower="true"
+	 rdfs:label="akritiko">
+	<kb:atService rdf:resource="&kb;KB_301045_Instance_40"/>
+	<kb:ofUser rdf:resource="&kb;KB_301045_Instance_44"/>
+</kb:contact>
+<kb:portal rdf:about="&kb;KB_301045_Instance_54"
+	 kb:rssFeed="http://www.feedburner.com/newsfilter"
+	 kb:url="http://www.newsfilter.gr"
+	 rdfs:label="http://www.newsfilter.gr"/>
+<kb:elearning rdf:about="&kb;KB_301045_Instance_55"
+	 kb:numberOfStudents="100"
+	 kb:numberOfTeachers="20"
+	 kb:rssFeed="http://www.feedburner.com/quickandeasy"
+	 kb:url="http://www.quickandeasy"
+	 rdfs:label="http://www.quickandeasy"/>
+<kb:groupware rdf:about="&kb;KB_301045_Instance_56"
+	 kb:numberOfColleagues="4"
+	 kb:rssFeed="http://www.feedburner.com/xenia"
+	 kb:url="http://www.newsfilter.gr/xenia"
+	 rdfs:label="http://www.newsfilter.gr/xenia"/>
+</rdf:RDF>

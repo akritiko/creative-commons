@@ -1,0 +1,13 @@
+
+Results from Table: Person 
+
+name        |salary|age|
+------------------------
+Skalistis   |23    |41 |
+Aygoystakis |54    |17 |
+Kritikos    |15    |101|
+Papadopoulos|56    |54 |
+------------------------
+Number of Results: 4
+Time: 0.047 sec
+

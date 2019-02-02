@@ -1,0 +1,24 @@
+@relation university
+
+@attribute date {d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14}
+@attribute weather {sun, mist, rain}
+@attribute road {town, ring-road}
+@attribute day {weekend, weekday}
+@attribute windy {weak, strong}
+@attribute on-time {yes, no}
+	
+@data
+d1,sun,town,weekend,strong,yes
+d2,sun,town,weekday,strong,yes
+d3,mist,town,weekend,strong,yes
+d4,rain,ring-road,weekend,weak,yes
+d5,rain,ring-road,weekend,strong,yes
+d6,rain,ring-road,weekday,weak,no
+d7,mist,ring-road,weekday,strong,no
+d8,sun,town,weekend,weak,yes
+d9,sun,ring-road,weekend,weak,yes
+d10,rain,town,weekend,weak,yes
+d11,sun,town,weekday,weak,yes
+d12,mist,town,weekday,strong,yes
+d13,mist,ring-road,weekend,weak,no
+d14,rain,town,weekday,strong,no

@@ -1,0 +1,22 @@
+<!ELEMENT web2persona (nickname, fullname, memberof, follows, followedBy)>
+<!ATTLIST web2persona 
+	id ID #REQUIRED
+>
+<!ELEMENT nickname (#PCDATA)>
+<!ELEMENT fullname (#PCDATA)>
+<!ELEMENT memberof (web2service+)>
+<!ELEMENT web2service EMPTY>
+<!ATTLIST web2service 
+	name CDATA #REQUIRED
+	uniqueURL CDATA #REQUIRED
+>
+<!ELEMENT follows (atService*)>
+<!ELEMENT atService EMPTY>
+<!ATTLIST atService
+	id IDREF #REQUIRED
+>
+<!ELEMENT followedBy (atService*)>
+<!ELEMENT atService EMPTY>
+<!ATTLIST atService
+	id IDREF #REQUIRED
+>

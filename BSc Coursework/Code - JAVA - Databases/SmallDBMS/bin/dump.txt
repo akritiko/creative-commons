@@ -1,0 +1,63 @@
+
+create table Person (id integer,name char,salary integer,age integer,primary key (id)) ;
+create index SALARY on Person ( salary );
+insert into Person values(1,'Papadopoulos',65,6);
+insert into Person values(4,'FreedomAngel',51,61);
+insert into Person values(7,'Papadopoulos',32,51);
+insert into Person values(10,'Skalistis',23,41);
+create index AGE on Person ( age );
+drop index AGE2 ;
+create index AGE2 on Person ( age );
+		
+insert into Person values(13,'Aygoystakis',54,17);
+insert into Person values(16,'Kritikos',15,101);
+insert into Person values(19,'Papadopoulos',56,54);
+insert into Person values(22,'Philippou',97,21);
+insert into Person values(25,'Papadopoulos',40,76);
+
+create table Person2 (id2 integer,name2 char,salary2 integer,age2 integer,primary key (id2)) ;
+create index SALARY2 on Person2 ( salary2 );
+insert into Person2 values(1,'Papadopoulos',65,6);
+insert into Person2 values(4,'FreedomAngel',51,61);
+insert into Person2 values(7,'Papadopoulos',32,51);
+insert into Person2 values(10,'Skalistis',23,41);
+create index AGE2 on Person ( age2 );
+drop index AGE2 ;
+create index AGE2 on Person ( age2);
+		
+insert into Person2 values(13,'Aygoystakis',54,17);
+insert into Person2 values(16,'Kritikos',15,101);
+insert into Person2 values(19,'Papadopoulos',56,54);
+insert into Person2 values(22,'Philippou',97,21);
+insert into Person2 values(25,'Papadopoulos',40,76);
+
+		select;
+select id;
+select id from;
+select id from Person;
+select id,name from Person2 ;
+select from where;
+select name from Person where id =10;
+select name from Person where id < 25;
+select name,salary,id,age from Person where id>7 and id<22;
+select year from Person where age >6;
+select id,name2,id2 from Person,Person2 where id =7 and name2 ='Papadopoulos';
+select name, age2 from Person,Person2 where age2 >41 and name = 'FreedomAngel';
+select id,name2 from Person,Person;
+select id,name from Person,Person;
+select name,id from Person,Person2 where name = 'Papadopoulos' and id = 1;
+select id from Person where id>1 and id <= 25;
+select name from Person where age = 6 or age = 17;
+select name from Person where id= 1 and age =51;
+select name from Person where salary = 33;
+select name from Person where age =6 and age =6;
+			
+select name,age from Person  where salary >23 Union select age2 from Person2  where name2  =   'Papadopoulos';
+select id,name from Person  where salary >=51 Union select id2,name2 from Person2  where age2<25;
+select id from Person  where name='Papadopoulos' Intersection select age2 from Person2  where id2=1 and id2 =25;
+select id,age from Person  where name='Papadopoulos' Intersection select id2,age2 from Person2  where id2=1 or id2 =25;
+select name from Person  where id> 1 and id < 19 Union select name2 from Person2  where name2='FreedomAngel' and name2 = 'Papadopoulos';
+select id,name from Person  where id < 16 Minus select id2,name2 from Person2 where name2 = 'Papadopoulos';
+select id from Person Intersection select id2 from Person2 ;
+select name,id from Person  where id >=16 UNion Select name2,id2 from Person2 where age2 > 102;
+select age,name,id2 from Person,Person2  where name = 'Papadopoulos' and id2 =4;

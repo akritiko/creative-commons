@@ -1,0 +1,707 @@
+/* 
+	TEXNHTH NOHMOSYNH
+	ERGASIA: 2
+
+	KRHTIKOS APOSTOLOS
+	AEM: 914
+*/
+
+
+/*
+	Se autin tin ergasia ylopoieitai ena empeiro systima pou pairnei apofaseis 
+	sxetika me to ti provlimata antimetopizoun 3 ypologistes se mia nisida pou 
+	syndeontai metaksi tous se ena topiko diktyo alla kai meso enos ypologisti 
+	sto diktyo.
+	To empeiro systima ekkineitai kalontas tin energeia run, diladi pliktrologontas 
+	run. stin konsola
+*/
+
+
+/*
+	Parakato dilonontai ta plaisia kai stigmiotypa pou ylopoioun oli
+	tin aparaititi pliroforia gia anaparastasi tis nisidas pou perigrafei
+	i parousa ergasia. 
+	Mellontika vevaia an thelisoume na prosthesoume neous ypologistes san 
+	meri tis nisidas autis den exoume para na kataskeuasoume nea stigmiotypa
+	pou tha akolouthoun ta protypo ton antistoixon plaision.
+	Gia eukoloteri anagnosi kai optikopoiisi tou provlimatos meta apo kathe 
+	plaisio ylopoiountai kai ta antistoixa stigmiotypa.
+	Telos opou theorithike oti yparxei kindynos sygxisis me tis monades metrisis
+	autes anaferontai me morfi sxolion.
+*/
+	
+
+frame computer ;
+	default onoma is unknown.
+
+instance computer1 is a computer ;
+	onoma is pc1.
+
+instance computer2 is a computer ;
+	onoma is pc2.
+
+instance computer3 is a computer ;
+	onoma is pc3.
+
+
+frame cpu ;
+	default anikei is 0 and		%Se poion ypologisti anikei
+	default typos is unknown and
+	default taxytita is 0.		%Se GHz
+
+instance cpu1 is a cpu ;
+	anikei is 1 and
+	typos is pentium and
+	taxytita is 3.
+
+instance cpu2 is a cpu ;
+	anikei is 2 and
+	typos is pentium and
+	taxytita is 3.2.
+
+instance cpu3 is a cpu ;
+	anikei is 3 and
+	typos is pentium and
+	taxytita is 3.4.
+
+
+frame ram ;
+	default anikei is 0 and
+	default megethos is 0.		%Se MB
+
+instance ram1 is a ram ;
+	anikei is 1 and
+	megethos is 512.
+
+instance ram2 is a ram ;
+	anikei is 2 and
+	megethos is 512.
+
+instance ram3 is a ram ;
+	anikei is 3 and
+	megethos is 1024.
+
+
+frame skliros_diskos ;			%Se GB
+	default anikei is 0 and
+	default xoritikotita is 0 and
+	default eleutheros_xoros is 0.
+
+instance hd1 is a skliros_diskos ;
+	anikei is 1 and
+	xoritikotita is 80 and
+	eleutheros_xoros is 40.
+
+instance hd2 is a skliros_diskos ;
+	anikei is 2 and
+	xoritikotita is 120 and
+	eleutheros_xoros is 70.
+
+instance hd3 is a skliros_diskos ;
+	anikei is 3 and
+	xoritikotita is 160 and
+	eleutheros_xoros is 50.
+
+frame othoni ;
+	default anikei is 0 and
+	default egxromi is 0 and	% (1) egxromi, (0) aspromauri
+	default inches is 0.
+
+instance othoni1 is a othoni ;
+	anikei is 1 and
+	egxromi is 1 and
+	inches is 15.
+
+instance othoni2 is a othoni ;
+	anikei is 2 and
+	egxromi is 1 and
+	inches is 15.
+
+instance othoni3 is a othoni ;
+	anikei is 3 and
+	egxromi is 1 and
+	inches is 17.
+
+
+frame karta_diktyou ;
+	default anikei is 0 and
+	default modelo is unknown.
+
+instance karta_diktyou1 is a karta_diktyou ;
+	anikei is 1 and
+	modelo is realtek_rtl_8169.
+
+instance karta_diktyou2 is a karta_diktyou ;
+	anikei is 2 and
+	modelo is realtek_rtl_8169.
+
+instance karta_diktyou3 is a karta_diktyou ;
+	anikei is 3 and
+	modelo is realtek_rtl_8169.
+
+
+frame disketa ;
+	default anikei is 0 and
+	default modelo is unknown.
+
+instance disketa1 is a disketa ;
+	anikei is 1 and
+	modelo is toshiba.
+
+instance disketa2 is a disketa ;
+	anikei is 2 and
+	modelo is toshiba.
+
+
+frame cd_rw ;
+	default anikei is 0 and
+	default modelo is unknown and
+	default tax_anagnosis is 0 and	%SE ??X (p.x 32X)
+	default tax_eggrafis is 0 and	%omoios
+	default tax_epaneggrafis is 0.	%omoios
+
+instance cd_rw1 is a cd_rw ;
+	anikei is 1 and
+	modelo is crypto and
+	tax_anagnosis is 42 and		
+	tax_eggrafis is 36 and		
+	tax_epaneggrafis is 24.		
+
+
+frame dvd_rom ;
+	default anikei is 0 and
+	default modelo is unknown and
+	default tax_anagnosis is 0.	%SE ??X (p.x 32X)
+
+instance dvd_rom2 is a dvd_rom;
+	anikei is 2 and
+	modelo is nec and
+	tax_anagnosis is 4.		
+
+
+frame dvd_rw ;
+	default anikei is 0 and
+	default modelo is unknown and
+	default tax_anagnosis is 0 and	%SE ??X (p.x 32X)
+	default tax_eggrafis is 0 and	%omoios
+	default tax_epaneggrafis is 0.	%omoios
+
+instance dvd_rw3 is a dvd_rw ;
+	anikei is 3 and
+	modelo is toshiba and
+	tax_anagnosis is 12 and		
+	tax_eggrafis is 4 and		
+	tax_epaneggrafis is 2.	
+
+
+frame modem ;
+	default anikei is 0 and
+	default modelo is unknown and
+	default kbps is 0.
+
+instance modem3 is a modem ;
+	anikei is 3 and
+	modelo is crypto and
+	kbps is 56.
+
+
+group computer_parts
+	karta_diktyou, disketa, cd_rw, dvd_rom, dvd_rw, modem.
+
+
+frame sarotis ;
+	default anikei is 0 and
+	default modelo is unknown.
+
+instance sarotis2 is a sarotis ;
+	anikei is 2 and
+	modelo is mustek_3000.
+
+
+frame ektypotis ;
+	default anikei is 0 and
+	default modelo is unknown and
+	default selides_ana_lepto is 0.
+
+instance ektypotis3 is a perifereiako ;
+	anikei is 3 and
+	modelo is hp_deskjet_1250 and
+	selides_ana_lepto is 220.
+
+
+group perifereiaka
+	othoni, sarotis, ektypotis.
+
+
+frame leitourgiko_systima ;
+	default in_pc is 0 and
+	default typos is unknown and
+	default paketo is unknown.
+
+instance os1 is a leitourgiko_systima ;
+	in_pc is 1 and
+	typos is windows_xp and
+	paketo is home_greek.
+
+instance os2 is a leitourgiko_systima ;
+	in_pc is 2 and
+	typos is windows_xp and
+	paketo is home_english.
+
+instance os3 is a leitourgiko_systima ;
+	in_pc is 3 and
+	typos is windows_xp and
+	paketo is pro_english.
+
+
+frame cable ;
+	default taxytita is 0.
+
+
+/*
+	Edo ylopoiountai oi erotiseis pou prokeitai na eksagoun tin
+	aparaititi pliroforia pou apaiteitai apo ton xristi gia na 
+	einai se thesi to empeiro systima mas na apofanthei gia to 
+	provlima pou antimetopizei o ekastote 'provlimatikos' 
+	ypologistis.
+	Oi treis protes erotiseis ylopoioun genika xaraktiristika 
+	tou systimatos opos tin eisodo i apofasi gia eksodo apo auto,
+	tin epilogi tou provlimatikou ypologisti eno i erotisi
+	karigoria_provlimatos parousiazei ston xristi mia lista genikon 
+	provlimaton, gia na ton dieukolynei na perigrapsei sostotera,
+	eukolotera alla kai akrivestera to provlima pou antimetopizei.
+*/
+
+
+question kyrio_menou
+	Ti thelete na kanete? ;
+	choose one of menou.
+
+group menou
+	'Ekkinisi Programmatos', 
+	'Eksodos'.
+
+
+question epilogi_ypologisti
+	Epilekste ton ypologisti pou parousiazei provlima: ;
+	choose one of pcs.
+
+group pcs
+	'Computer A', 
+	'Computer B', 
+	'Computer C'.
+
+
+question katigoria_provlimatos
+	Epilekste tin katigoria provlimatos: ;
+	choose one of categories.
+
+group categories
+	'1. Provlima me to topiko diktyo.',
+	'2. Provlima syndesis me to Internet.',
+	'3. Provlima kata tin ektiposi.',
+	'4. Provlima kata ti sarosi.',
+	'5. Adynamia apothikeusis.',
+	'6. Kathisterisi ekkinisis programmaton.',
+	'7. Alla provlimata...'.
+
+
+% EROTHSEIS POU AFOROUN THN PROTH KATHGORIA (1) PROVLIMATON
+
+question oratotita_sto_lan
+	O ypologistis sas vlepei stin perioxi diktyou tous allous ypologistes? ;
+	choose one of yes_or_no.
+
+question oratotita_sto_lan_sympliroma
+	O ypologistis sas vlepei stin perioxi diktyou ton eauto tou? ;
+	choose one of yes_or_no.
+
+question koinoxrista_stoixeia
+	Mporei o ypologistis na xrisimopoiei apodotika ta koinoxrista stoixeia ton ypoloipon? ;
+	choose one of yes_or_no.
+
+question syndesi_sto_internet_a_or_b
+	Mporei o ypologistis na syndethei epityxos sto internet (afora monon tous ypologistes A kai B)? ;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN DEYTERH KATHGORIA (2) PROVLIMATON
+
+
+question syndesi_sto_internet
+	Mporei kapoios apo tous ypologistes na syndethei sto internet? ;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN TRITH KATHGORIA (3) PROVLIMATON
+
+
+question typos_syndesis_me_ektypoti
+	Pos syndeeste me ton ektypoti? ;
+	choose one of types.
+
+group types
+	'Apeutheias', 'Meso LAN'.
+
+question seeing_the_lan
+	O ypologistis sas vlepei to diktyo? ;
+	choose one of yes_or_no.
+
+question elegxos_kalodiou
+	Einai to kalodio syndedemeno kai elegmeno gia fthores? ; 
+	choose one of yes_or_no.
+
+question adynamia_ektyposis
+	Ektyponei o ypologistis sas? ;
+	choose one of yes_or_no.
+
+question ektypotis_on
+	Einai energos o ektypotis? ;
+	choose one of yes_or_no.
+
+question ektypotis_etoimos
+	Einai o ektypotis etoimos gia ektyposi ?;
+	choose one of yes_or_no.
+
+question ektyposi_apo_alla_pc
+	Mporoun oi ypoloipoi ypologistes na ektyposoun ?;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN TETARTH KATHGORIA (4) PROVLIMATON
+
+
+question sarotis_ready
+	Einai o sarotis etoimos gia xrisi ?;
+	choose one of yes_or_no.
+
+question adynamia_sarosis
+	O ypologistis sas syndeetai apeutheias me ton saroti alla den mporei na sarosei? ;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN PEMPTH KATHGORIA (5) PROVLIMATON
+
+
+question adynamia_apothikeusis
+	Ta arxeia sas den apothikeuontai ston disko? ;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN EKTH KATHGORIA (6) PROVLIMATON
+
+
+question kathisterimeni_ekkinisi_efarmogon
+	Kapoies efarmoges argoun na ksekinisoun? ;
+	choose one of yes_or_no.
+
+
+% EROTHSEIS POU AFOROUN THN EVDOMH (DIKH MOY) KATHGORIA (7) PROVLIMATON
+
+
+question skoteini_othoni
+	H othoni sas parousiazei to periexomeno poli skoteino? ;
+	choose one of yes_or_no.
+
+question megali_analysi
+	H othoni sas parousiazei ta periexomena smikrismena? ;
+	choose one of yes_or_no.
+
+question disketa_not_full
+	Yparxei o apaitoumenos eleutheros xoros sti disketa? ;
+	choose one of yes_or_no.
+
+question adynamia_eggrafis_se_disketa
+	Ta dedomena sas den eggrafontai sti disketa? ;
+	choose one of yes_or_no.
+
+
+/*
+	To sygegkrimeno synolo xrisimopoieitai apo oles tis parapano
+	erotiseis. H fysi ton zitoumenon kai i ylopoiisi pou epileksame
+	epitrepei tin peratosi tou systimatos me ti xrisi apantiseon
+	stis erotiseis me nai i oxi eno monon stis 2 arxikes erotiseis
+	gia Ekkinisi tou programmatos alla kai epilogi katigorias 
+	provlimatos xrisimopoiountai menou epilogon.
+*/
+
+
+group yes_or_no
+	'Yes','No'.
+
+
+/*
+	Parakato ylopoiountai oi aparaititoi kanones kai se kapoies 
+	periptoseis kai kapoies energeies pou xreiazontai gia 
+	aposafinisi apantiseon. 
+*/
+
+
+% KANONES KAI ENERGEIES GIA THN PROTH KATHGORIA PROVLIMATON
+
+
+rule broken_netcard_or_driver
+	if	the oratotita_sto_lan_sympliroma is 'No'
+	then 	my_flag becomes 1.
+
+rule check_which_computer
+	if 	selected_computer is 'Computer A'
+	or	selected_computer is 'Computer B'
+	then 	do to_ask_or_not_to_ask.
+
+action to_ask_or_not_to_ask ;
+	do ask syndesi_sto_internet_a_or_b and
+	if syndesi_sto_internet_a_or_b is 'No' 
+	then my_flag3 becomes 1
+	else my_flag3 becomes 0
+	end if.
+
+rule bad_hub
+	if 	the oratotita_sto_lan is 'No' and
+		the koinoxrista_stoixeia is 'No' and
+		[
+		   [ selected_computer is not 'Computer C' and my_flag3 is 1 ] 
+		   or selected_computer is 'Computer C'
+		]
+	then	if my_flag is 1 then
+			write ('Pithanotata prepei na elegksete ton odigo tis kartas diktyou i na tin antikatastisete!')
+		else
+			write ('Pithanotata prepei na antikatastisete to kalodio pou syndeei ton ypologisti me to hub!')
+		end if and
+		nl and nl.
+
+
+% KANONES GIA TH DEYTERH KATHGORIA PROVLIMATON
+
+
+rule syndesi_sto_indernet
+	if	the syndesi_sto_internet is 'No'
+	then	write ('Elegkste an to modem sas einai se leitourgia!') and 
+		nl and nl.
+
+% KANONES KAI ENERGEIES GIA THN TRITH KATHGORIA PROVLIMATON
+
+
+rule ektypotis_off
+	if	the adynamia_ektyposis is 'No' and
+		the ektyposi_apo_alla_pc is 'No'
+	then	my_flag2 becomes 1 and nl and 
+		do write_result.
+
+
+action write_result ;
+	do ask ektypotis_on and ask ektypotis_etoimos and ask typos_syndesis_me_ektypoti  and
+	if 	the ektypotis_on is 'Yes' and ektypotis_etoimos is 'Yes' and typos_syndesis_me_ektypoti is 'Apeutheias'
+	then 	write( 'Den einai egatestimenos o odigos tou ektypoti!' )
+	else
+		if ektypotis_on is 'Yes' and my_flag2 is 1
+		then write ('Pithanotata exei xalasei o ektypotis i to kalodio tou i parallili thyra stin opoia einai syndedemenos!')
+		else write ('Elegkste an o ektypotis sas einai anenergos!')
+		end if
+	end if 
+	and nl and nl.
+
+rule broken_printer_driver  
+	if	the typos_syndesis_me_ektypoti  is 'Meso LAN' and
+		adynamia_ektyposis is 'No' and
+		the seeing_the_lan is 'Yes' and
+		ektyposi_apo_alla_pc is 'Yes'
+	then	write ('Den einai egatestimenos o odigos tou ektypoti!') and
+		nl and nl.
+
+
+% KANONES GIA THN TETARTH KATHGORIA PROVLIMATON
+
+
+rule broken_scanner_driver
+	if	the sarotis_ready is 'Yes' and
+		the adynamia_sarosis is 'Yes'
+	then	write ('Den einai egatestimenos o odigos tou saroti!') and
+		nl and nl.
+
+
+% KANONES GIA THN PEMPTH KATHGORIA PROVLIMATON
+
+
+rule no_space_available
+	if	the adynamia_apothikeusis is 'Yes' 
+	then	write( 'Pithanotata o diskos ston opoio prospatheite na apothikeusete exei gemisei!' ) and
+		nl and nl.
+
+
+% KANONES GIA THN EKTH KATHGORIA PROVLIMATON
+
+
+rule slow_pc
+	if	the kathisterimeni_ekkinisi_efarmogon is 'Yes' 
+	then	write( 'Pithanotata i mnimi you ypologisti ' ) and 
+		write( selected_computer ) and 
+		write( ' exei eksantlithei!' ) and
+		nl and nl.
+
+
+% KANONES GIA THN EVDOMH (DIKH MOY) KATHGORIA PROVLIMATON
+
+
+rule disketa
+	if	the adynamia_eggrafis_se_disketa is 'Yes' and
+		the disketa_not_full is 'Yes'
+	then	write( 'Elegkste an i disketa einai mono gia anagnosi i einai katestrameni!' ) and
+		nl and nl.
+
+rule othoni
+	if	the skoteini_othoni is 'Yes' or
+		the megali_analysi is 'Yes'
+	then	write( 'Elegkste tis ruthmiseis tis othonis!' ) and 
+		nl and nl.
+
+
+/* 
+	Edo omadopoiountai oi kanones se omades kanonon (rulesets) 
+	gia tin kalyteri ylopoiisi tou programmatos. Dimiourgountai
+	7 synola kanonon (oses kai oi katigories provlimaton. 
+	Me auton ton tropo kata tin ekkinisi tou programmatos 
+	o xristis erotatai monon ekeines tis erotiseis pou endiaferoun
+	ti sygekrimeni katigoria provlimatos pou epelekse.
+	Epipleon apofeugoume tin epanalipsi elegxou se kathe kanona gia 
+	to poia katigoria erotiseon exei epilegei gia na doume an prepei 
+	o kanonas autos na elegxthei.
+*/
+	
+
+ruleset category1
+	contains cat1_rules;
+	update ruleset by removing each selected rule. 
+
+group cat1_rules
+	broken_netcard_or_driver, check_which_computer, bad_hub.
+
+
+ruleset category2
+	contains cat2_rules;
+	update ruleset by removing each selected rule. 
+
+group cat2_rules
+	syndesi_sto_indernet.
+
+
+ruleset category3
+	contains cat3_rules;
+	update ruleset by removing each selected rule.
+
+group cat3_rules
+	ektypotis_off, broken_printer_driver.
+
+
+ruleset category4
+	contains cat4_rules;
+	update ruleset by removing each selected rule.
+
+group cat4_rules
+	broken_scanner_driver.
+
+
+ruleset category5
+	contains cat5_rules;
+	update ruleset by removing each selected rule.
+
+group cat5_rules
+	no_space_available.
+
+
+ruleset category6
+	contains cat6_rules;
+	update ruleset by removing each selected rule.
+
+group cat6_rules
+	slow_pc.
+
+
+ruleset category7
+	contains cat7_rules;
+	update ruleset by removing each selected rule.
+
+group cat7_rules
+	disketa, othoni.
+
+
+
+/* 
+	H parakato energeia kaleitai proti me tin ekkinisi tou 
+	programmatos kai katharizei tin konsola apo otidipote 
+	ypirxe proigoumenos. 
+	Me auton ton tropo o xristis mporei na vlepei monon ta
+	apotelesmata tou systimatos pou einai kai auta pou ton
+	endiaferoun 
+*/
+
+action clear_console ;
+	system_menu(1,edit,select_all) and
+  	system_menu(1,edit,clear). 
+
+
+/*
+	H energeia auti einai ypeuthini gia tin epilogi tou katallilou 
+	ruleset me vasi poia katigoria provlimaton exei epileksei o xristis
+*/
+
+action which_category ;
+	
+     ask katigoria_provlimatos and 
+	if katigoria_provlimatos is '1. Provlima me to topiko diktyo.' then
+	   invoke category1
+	else
+	   if katigoria_provlimatos is '2. Provlima syndesis me to Internet.' then
+	      invoke category2
+	   else
+	      if katigoria_provlimatos is '3. Provlima kata tin ektiposi.' then
+	         invoke category3
+	      else
+		 if katigoria_provlimatos is '4. Provlima kata ti sarosi.' then
+		    invoke category4
+		 else
+		    if katigoria_provlimatos is '5. Adynamia apothikeusis.' then
+		       invoke category5
+		    else
+		       if katigoria_provlimatos is '6. Kathisterisi ekkinisis programmaton.' then
+			  invoke category6
+		       else
+			  invoke category7
+		       end if
+		    end if
+		 end if
+	      end if
+	   end if
+        end if.
+
+
+/*
+	Pliktrologontas run. stin konsola kaloume tin parakato
+	energeia pou einai ypeuthini gia tin ekkinisi tou systimatos
+	kai diaxeirizetai to kyrio menou kathos kai tin ploigisi 
+	tou xristi stis diafores katigories provlimaton pou to ]
+	empeiro mas systima prosferei.
+*/ 
+
+action run ;
+	do restart and
+	do clear_console and
+	   ask kyrio_menou and
+	      if kyrio_menou is 'Ekkinisi Programmatos' then 
+	         ask epilogi_ypologisti and
+		    if epilogi_ypologisti is 'Computer A' then
+		       selected_computer becomes 'Computer A'
+		    else
+		       if epilogi_ypologisti is 'Computer B' then
+		          selected_computer becomes 'Computer B'
+		       else
+		          selected_computer becomes 'Computer C'
+		       end if
+		    end if and
+		    nl and write( 'PITHANES AITIES VLAVON GIA TON YPOLOGISTH: ' ) and 
+		    write( selected_computer ) and nl and nl and 
+	            do which_category
+	      else
+	         write ('Euxaristoume pou epileksate to systima mas!!!') and 
+		 nl and nl
+	      end if.

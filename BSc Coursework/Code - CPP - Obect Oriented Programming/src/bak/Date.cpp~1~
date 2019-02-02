@@ -1,0 +1,107 @@
+#include "./Date.h"
+
+//O KENOS DHMIOYRGOS
+Date::Date()
+{
+
+}
+
+//DHMIOYRGOS ME ORISMATA
+Date::Date( unsigned int Day, Months Month, unsigned int Year )
+{
+  bool flag2 = false; //EGGYATAI THN EKSODO APO TO EKSOTERIKO WHILE
+  //OTAN H HMEROMHNIA FTASEI SE APODEKTH MORFH H OTAN EINAI
+  //SOSTH APO THN ARXH.
+
+  /* AN TO day EINAI MIKROTERO TOY 28 THA EXOYME SOSTH HMEROMHNIA OPOIOS KI AN
+  EINAI O MHNAS */
+  while ( Day > 28 )
+  {
+    flag2 = false;
+    //OSO TO DAY EINAI MEGALYTERO TOY 31 KAI MHNA POY EXEI 31 HMERES
+    while ( Day > 31
+         && ( Month == Jan || Month == Mar || Month == May || Month == Jul
+         || Month == Aug || Month == Oct || Month == Dec ) )
+         {
+           Day -= 31; //RYTHMIZONTAI OI MERES (AFAIROYME 31)
+           if ( Month == Dec ) //ELEGXETAI ENDEXOMENH ALLAGH ETOYS
+           {
+             Month = Jan; //AN YPARXEI ALLAGH ETOYS O MHNAS GINETAI IANOYARIOS
+             Year++; //KAI AYKSANETAI KATA 1 TO ETOS
+           }
+           else
+             Month++; //ALLIOS APLA RYTHMIZETAI O MHNAS
+           flag2 = true;
+    }
+    //OSO TO DAY EINAI MEGALYTERO TOY 30 KAI EXOYME MHNA ME 30 MERES
+    while ( Day > 30
+         && ( Month == Apr || Month == Jun || Month == Sep || Month == Nov ) )
+         {
+           Day -= 30; //RYTHMIZONTAI OI MERES (AFAIROYNTAI 30)
+           Month++; //RYTHMIZETAI O MHNAS
+           flag2 = true;
+    }
+    //OSO TO DAY EINAI MEGALYTERO APO 28 KAI O MHNAS EINAI O FEBROYARIOS
+    while ( Day > 28 && ( Month == Feb ) )
+    {
+      /* EKSETAZOYME MHPOS TO ETOS EINAI DISEKTO KAI TO DAY EINAI 29 OPOTE KAI
+      DEXOMASTE THN HMEROMHNIA */
+      if ( Day == 29 && ( ( Year % 4 ) == 0 ) ) break;
+
+      //ALLIOS AN EINAI DISEKTO TO ETOS ALLA TO day EINAI > 29
+      if ( Year % 4 == 0 )
+      {
+        Day -= 29; //RYTHMIZONTAI OI MERES (AFAIROYME 29)
+        Month++; //RYTHYMIZETAI O MHNAS
+      }
+      else //AN DEN EINAI DISEKTO TO ETOS
+      {
+        Day -= 28; //RYTHMIZONTAI OI MERES (AFAIROYME 28)
+        Month++; //RYTHMIZETAI O MHNAS
+      }
+      flag2 = true;
+    }
+    if ( !flag2 ) break;
+    /* EPISTREFEI APO TO LOOP AN O XRHSTHS EXEI DOSEI SOSTH
+    HMEROMHNIA EKS ARXHS */
+  }
+
+  //KATAXOTHSH TELIKON TIMON
+  _Day = Day;
+  _Month = Month;
+  _Year = Year;
+}
+
+void Date::getDate()
+{
+  cout << _Day << "/" << _Month << "/" << _Year;
+}
+
+void Date::setDefaultDate()
+{
+  _Day = 0;
+  _Month = Jan;
+  _Year = 0;
+}
+
+void Date::setWhenBorrowed()
+{
+  _Day = 999; //H AKYRH MERA
+
+}
+
+
+unsigned int Date::getDay()
+{
+  return _Day;
+}
+
+Months Date::getMonth()
+{
+  return _Month;
+}
+
+unsigned int Date::getYear()
+{
+  return _Year;
+}

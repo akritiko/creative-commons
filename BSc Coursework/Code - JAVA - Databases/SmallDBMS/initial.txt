@@ -1,0 +1,32 @@
+
+create table Person (id integer,name char,salary integer,age integer,primary key (id)) ;
+create index SALARY on Person ( salary );
+insert into Person values(1,'Papadopoulos',65,6);
+insert into Person values(4,'FreedomAngel',51,61);
+insert into Person values(7,'Papadopoulos',32,51);
+insert into Person values(10,'Skalistis',23,41);
+create index AGE on Person ( age );
+drop index AGE2 ;
+create index AGE2 on Person ( age );
+		
+insert into Person values(13,'Aygoystakis',54,17);
+insert into Person values(16,'Kritikos',15,101);
+insert into Person values(19,'Papadopoulos',56,54);
+insert into Person values(22,'Philippou',97,21);
+insert into Person values(25,'Papadopoulos',40,76);
+
+create table Person2 (id2 integer,name2 char,salary2 integer,age2 integer,primary key (id2)) ;
+create index SALARY2 on Person2 ( salary2 );
+insert into Person2 values(1,'Papadopoulos',65,6);
+insert into Person2 values(4,'FreedomAngel',51,61);
+insert into Person2 values(7,'Papadopoulos',32,51);
+insert into Person2 values(10,'Skalistis',23,41);
+create index AGE2 on Person ( age2 );
+drop index AGE2 ;
+create index AGE2 on Person ( age2);
+		
+insert into Person2 values(13,'Aygoystakis',54,17);
+insert into Person2 values(16,'Kritikos',15,101);
+insert into Person2 values(19,'Papadopoulos',56,54);
+insert into Person2 values(22,'Philippou',97,21);
+insert into Person2 values(25,'Papadopoulos',40,76);

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.newsfilter.gr/Web2User" xmlns:tns="http://www.newsfilter.gr/Web2User" elementFormDefault="qualified">
+
+    <complexType name="web2Persona">
+    	<sequence>
+    		<element name="nickname" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="fullname" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="memberOf" type="tns:memberOf" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="follows" type="tns:friends"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="followedBy" type="tns:followers"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="id" type="string"></attribute>
+    </complexType>
+
+
+    <complexType name="memberOf">
+    	<sequence>
+    		<element name="service" type="tns:web2Service" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="web2Service">
+    	<attribute name="name" type="string"></attribute>
+    	<attribute name="uniqueURL" type="string"></attribute>
+    </complexType>
+
+    <element name="webPersona" type="tns:web2Persona"></element>
+
+    <complexType name="friends">
+    	<sequence>
+    		<element name="atService" type="tns:atService" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="atService">
+    	<sequence>
+    		<element name="contactID" type="string" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    	</sequence>
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+
+    <complexType name="followers">
+    	<sequence>
+    		<element name="atService" type="tns:atService" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

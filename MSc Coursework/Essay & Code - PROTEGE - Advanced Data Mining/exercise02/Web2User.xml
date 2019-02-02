@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:webPersona id="akritiko@gmail.com" xmlns:tns="http://www.newsfilter.gr/Web2User" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.newsfilter.gr/Web2User Web2User.xsd ">
+  <tns:nickname>akritiko</tns:nickname>
+  <tns:fullname>Apostolos Kritikos</tns:fullname>
+  <tns:memberOf>
+    <tns:service name="twitter" uniqueURL="http://twitter.com/akritiko"/>
+    <tns:service name="youtube" uniqueURL="http://www.youtube.com/user/akritiko"/>
+  </tns:memberOf>
+  <tns:follows>
+    <tns:atService name="twitter">
+      <tns:contactID>asynadak</tns:contactID>
+      <tns:contactID>chzigkol</tns:contactID>
+    </tns:atService>
+    <tns:atService name="youtube">
+      <tns:contactID>asynadak</tns:contactID>
+    </tns:atService>
+  </tns:follows>
+  <tns:followedBy>
+    <tns:atService name="twitter">
+      <tns:contactID>abraxas</tns:contactID>
+      <tns:contactID>chzigkol</tns:contactID>
+    </tns:atService>
+    <tns:atService name="youtube">
+      <tns:contactID>asynadak</tns:contactID>
+    </tns:atService>
+  </tns:followedBy>
+</tns:webPersona>

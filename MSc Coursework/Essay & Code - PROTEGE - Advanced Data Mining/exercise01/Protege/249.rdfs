@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY a 'http://protege.stanford.edu/system#'>
+	 <!ENTITY kb 'http://protege.stanford.edu/kb#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+]>
+<rdf:RDF xmlns:rdf="&rdf;"
+	 xmlns:a="&a;"
+	 xmlns:kb="&kb;"
+	 xmlns:rdfs="&rdfs;">
+<rdfs:Class rdf:about="&kb;account"
+	 rdfs:label="account">
+	<rdfs:subClassOf rdf:resource="&kb;web2Service"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;atService"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="atService">
+	<rdfs:domain rdf:resource="&kb;contact"/>
+	<rdfs:range rdf:resource="&kb;web2Service"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;cms"
+	 a:role="abstract"
+	 rdfs:label="cms">
+	<rdfs:subClassOf rdf:resource="&kb;web2persona"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&kb;contact"
+	 rdfs:label="contact">
+	<rdfs:subClassOf rdf:resource="&kb;web2persona"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;contacts"
+	 rdfs:label="contacts">
+	<rdfs:range rdf:resource="&kb;contact"/>
+	<rdfs:domain rdf:resource="&kb;user"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;elearning"
+	 rdfs:label="elearning">
+	<rdfs:subClassOf rdf:resource="&kb;cms"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;email"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="email">
+	<rdfs:domain rdf:resource="&kb;user"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;fullname"
+	 a:maxCardinality="1"
+	 rdfs:label="fullname">
+	<rdfs:domain rdf:resource="&kb;user"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;groupware"
+	 rdfs:label="groupware">
+	<rdfs:subClassOf rdf:resource="&kb;cms"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;isFollower"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 a:range="boolean"
+	 rdfs:label="isFollower">
+	<rdfs:domain rdf:resource="&kb;contact"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;memberOf"
+	 a:minCardinality="1"
+	 rdfs:label="memberOf">
+	<rdfs:domain rdf:resource="&kb;user"/>
+	<rdfs:range rdf:resource="&kb;web2Service"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;name"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="name">
+	<rdfs:domain rdf:resource="&kb;web2Service"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;nickname"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="nickname">
+	<rdfs:domain rdf:resource="&kb;user"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;numberOfColleagues"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 a:range="integer"
+	 rdfs:label="numberOfColleagues">
+	<rdfs:domain rdf:resource="&kb;groupware"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;numberOfStudents"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 a:range="integer"
+	 rdfs:label="numberOfStudents">
+	<rdfs:domain rdf:resource="&kb;elearning"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;numberOfTeachers"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 a:range="integer"
+	 rdfs:label="numberOfTeachers">
+	<rdfs:domain rdf:resource="&kb;elearning"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;ofUser"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="ofUser">
+	<rdfs:domain rdf:resource="&kb;contact"/>
+	<rdfs:range rdf:resource="&kb;user"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;portal"
+	 rdfs:label="portal">
+	<rdfs:subClassOf rdf:resource="&kb;cms"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;rssFeed"
+	 a:maxCardinality="1"
+	 rdfs:label="rssFeed">
+	<rdfs:domain rdf:resource="&kb;cms"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;selfHosted"
+	 rdfs:label="selfHosted">
+	<rdfs:range rdf:resource="&kb;cms"/>
+	<rdfs:domain rdf:resource="&kb;user"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;service"
+	 rdfs:label="service">
+	<rdfs:subClassOf rdf:resource="&kb;web2Service"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;uniqueURL"
+	 a:maxCardinality="1"
+	 rdfs:label="uniqueURL">
+	<rdfs:domain rdf:resource="&kb;account"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;url"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="url">
+	<rdfs:domain rdf:resource="&kb;cms"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;user"
+	 rdfs:label="user">
+	<rdfs:subClassOf rdf:resource="&kb;web2persona"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&kb;web2Service"
+	 a:role="abstract"
+	 rdfs:label="web2Service">
+	<rdfs:subClassOf rdf:resource="&kb;web2persona"/>
+</rdfs:Class>
+<rdfs:Class rdf:about="&kb;web2persona"
+	 a:role="abstract"
+	 rdfs:label="web2persona">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+</rdf:RDF>

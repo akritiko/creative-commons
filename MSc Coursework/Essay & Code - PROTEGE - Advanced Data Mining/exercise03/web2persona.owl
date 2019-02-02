@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.owl-ontologies.com/web2persona.owl#"
+    xmlns:p1="http://www.owl-ontologies.com/assert.owl#"
+  xml:base="http://www.owl-ontologies.com/web2persona.owl">
+  <owl:Ontology rdf:about=""/>
+  <owl:Class rdf:ID="cms"/>
+  <owl:Class rdf:ID="web2Service"/>
+  <owl:Class rdf:ID="groupware">
+    <rdfs:subClassOf rdf:resource="#cms"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="portal"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="service">
+    <rdfs:subClassOf rdf:resource="#web2Service"/>
+    <owl:disjointWith>
+      <owl:Class rdf:ID="account"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:ID="elearning">
+    <rdfs:subClassOf rdf:resource="#cms"/>
+    <owl:disjointWith>
+      <owl:Class rdf:about="#portal"/>
+    </owl:disjointWith>
+  </owl:Class>
+  <owl:Class rdf:about="#account">
+    <rdfs:subClassOf rdf:resource="#web2Service"/>
+    <owl:disjointWith rdf:resource="#service"/>
+  </owl:Class>
+  <owl:Class rdf:about="#portal">
+    <owl:disjointWith rdf:resource="#groupware"/>
+    <owl:disjointWith rdf:resource="#elearning"/>
+    <rdfs:subClassOf rdf:resource="#cms"/>
+  </owl:Class>
+  <owl:Class rdf:ID="user"/>
+  <owl:ObjectProperty rdf:ID="isFollowed">
+    <rdfs:range rdf:resource="#user"/>
+    <rdfs:domain rdf:resource="#user"/>
+    <owl:inverseOf>
+      <owl:InverseFunctionalProperty rdf:ID="follows"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="memberOf">
+    <rdfs:domain rdf:resource="#user"/>
+    <rdfs:range rdf:resource="#service"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:ID="numberOfColleagues">
+    <rdfs:domain rdf:resource="#groupware"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="uniqueUrl">
+    <rdfs:domain rdf:resource="#account"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="numberOfColeagues">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="rssFeed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#cms"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="name">
+    <rdfs:domain rdf:resource="#web2Service"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="email">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#user"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="fullname">
+    <rdfs:domain rdf:resource="#user"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="selfHosted">
+    <rdfs:domain rdf:resource="#user"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="numberOfTeachers">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#elearning"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="url">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="#cms"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="numberOfStudents">
+    <rdfs:domain rdf:resource="#elearning"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="nickname">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="#user"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#follows">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="#user"/>
+    <rdfs:domain rdf:resource="#user"/>
+    <owl:inverseOf rdf:resource="#isFollowed"/>
+  </owl:InverseFunctionalProperty>
+  <account rdf:ID="asynadak_flickr">
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.flickr.com/asynadak</uniqueUrl>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flickr</name>
+  </account>
+  <groupware rdf:ID="groupee">
+    <rssFeed rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.groupee.com/rss</rssFeed>
+    <numberOfColeagues rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</numberOfColeagues>
+    <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.groupee.com</url>
+    <numberOfColleagues rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >5</numberOfColleagues>
+  </groupware>
+  <account rdf:ID="chzigkol_youtube">
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.youtube.com/chzigkol</uniqueUrl>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >youtube</name>
+  </account>
+  <portal rdf:ID="sapspth">
+    <rssFeed rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.sapspth.gr/rss</rssFeed>
+    <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.sapspth.gr</url>
+  </portal>
+  <service rdf:ID="youtube">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >youtube</name>
+  </service>
+  <service rdf:ID="flickr">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flickr</name>
+  </service>
+  <rdf:Description rdf:about="http://www.owl-ontologies.com/project3.owl#__deleted__">
+    <fullname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Aggelos Synadakis</fullname>
+    <selfHosted rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >2</selfHosted>
+    <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >asynadak@gmail.com</email>
+    <rssFeed rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.sapspth.gr/rss</rssFeed>
+    <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.sapspth.gr</url>
+    <nickname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >asynadak</nickname>
+  </rdf:Description>
+  <account rdf:ID="akritiko_twitter">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >twitter</name>
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.twitter.com/akritiko</uniqueUrl>
+  </account>
+  <elearning rdf:ID="teachMe">
+    <url rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.teachme.com</url>
+    <numberOfTeachers rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >3</numberOfTeachers>
+    <rssFeed rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.teachme.com/rss</rssFeed>
+    <numberOfStudents rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >10</numberOfStudents>
+  </elearning>
+  <account rdf:ID="asynadak_youtube">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >youtube</name>
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.youtube.com/asynadak</uniqueUrl>
+  </account>
+  <user rdf:ID="akritiko">
+    <selfHosted rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >4</selfHosted>
+    <memberOf rdf:resource="#youtube"/>
+    <fullname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Apostolos Kritikos</fullname>
+    <follows>
+      <user rdf:ID="chzigkol">
+        <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >chzigkol@gmail.com</email>
+        <fullname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Christos Zigkolis</fullname>
+        <nickname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >chzigkol</nickname>
+        <follows rdf:resource="#akritiko"/>
+        <isFollowed rdf:resource="#akritiko"/>
+        <memberOf rdf:resource="#youtube"/>
+        <memberOf rdf:resource="#flickr"/>
+        <selfHosted rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >0</selfHosted>
+      </user>
+    </follows>
+    <email rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >akritiko@gmail.com</email>
+    <memberOf>
+      <service rdf:ID="twitter">
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >twitter</name>
+      </service>
+    </memberOf>
+    <isFollowed rdf:resource="#chzigkol"/>
+    <nickname rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >akritiko</nickname>
+    <memberOf rdf:resource="#flickr"/>
+  </user>
+  <account rdf:ID="chzigkol_twitter">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >twitter</name>
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.twitter.com/chzigkol</uniqueUrl>
+  </account>
+  <account rdf:ID="asynadak_twitter">
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >twitter</name>
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.twitter.com/asynadak</uniqueUrl>
+  </account>
+  <account rdf:ID="akritiko_youtube">
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.youtube.com/akritiko</uniqueUrl>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >youtube</name>
+  </account>
+  <account rdf:ID="akritiko_flickr">
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.flickr.com/akritiko</uniqueUrl>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flickr</name>
+  </account>
+  <account rdf:ID="chzigkol_flickr">
+    <uniqueUrl rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.flickr.com/chzigkol</uniqueUrl>
+    <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >flickr</name>
+  </account>
+  <owl:DataRange>
+    <owl:oneOf rdf:parseType="Resource">
+      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+      >Methadone</rdf:first>
+      <rdf:rest rdf:parseType="Resource">
+        <rdf:rest rdf:parseType="Resource">
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Vouprenofini</rdf:first>
+        </rdf:rest>
+        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Naltrexoni</rdf:first>
+      </rdf:rest>
+    </owl:oneOf>
+  </owl:DataRange>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.3.1, Build 430)  http://protege.stanford.edu -->

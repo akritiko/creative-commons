@@ -1,0 +1,146 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.0'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[      3305,         99]*)
+(*NotebookOutlinePosition[      3951,        121]*)
+(*  CellTagsIndexPosition[      3907,        117]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \(\("\<\[CapitalEpsilon]\[CapitalUpsilon]\[CapitalRho]\[CapitalEpsilon]\
+\[CapitalSigma]\[CapitalEta] \[CapitalEpsilon]\[CapitalNu]\[CapitalTau]\
+\[CapitalRho]\[CapitalOmicron]\[CapitalPi]\[CapitalIota]\[CapitalAlpha]\
+\[CapitalSigma]\>";\)\)], "Input"],
+
+Cell[BoxData[{
+    \(\(pP\  = \  .875;\)\), "\[IndentingNewLine]", 
+    \(\(pM\  = \  .125;\)\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Entropy[pP, pM]\  = \ \(-pP\)*\((Log[2, pP])\) - 
+        pM*\((Log[2, pM])\)\)], "Input"],
+
+Cell[BoxData[
+    \(0.5435644431995964`\)], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\("\<\[CapitalEpsilon]\[CapitalUpsilon]\[CapitalRho]\[CapitalEpsilon]\
+\[CapitalSigma]\[CapitalEta] GAIN\>";\)\)], "Input"],
+
+Cell[BoxData[{
+    \(\(Plithos\  = \ 14;\)\), "\[IndentingNewLine]", 
+    \(\(Entropy =  .86;\)\), "\[IndentingNewLine]", 
+    \(\(TotalExam1 = 7;\)\), "\[IndentingNewLine]", 
+    \(\(TotalExam2 = 7;\)\), "\[IndentingNewLine]", 
+    \(\(TotalExam3 = 0;\)\), "\[IndentingNewLine]", 
+    \(\(Entropy1 =  .86;\)\), "\[IndentingNewLine]", 
+    \(\(Entropy2 =  .86;\)\), "\[IndentingNewLine]", 
+    \(\(Entropy3 = 0;\)\), "\[IndentingNewLine]", 
+    \(\)}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Gain[Entropy, TotalExam1, TotalExam2, TotalExam3, Entropy1, Entropy2, 
+        Entropy3]\  = \ 
+      Entropy\  - \ \((TotalExam1/Plithos*Entropy1\  + \ 
+            TotalExam2/Plithos*Entropy2\  + \ 
+            TotalExam3/Plithos*Entropy3)\)\)], "Input"],
+
+Cell[BoxData[
+    \(0.`\)], "Output"]
+}, Open  ]]
+},
+FrontEndVersion->"5.0 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 681}},
+WindowSize->{633, 367},
+WindowMargins->{{150, Automatic}, {Automatic, 50}}
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 271, 4, 30, "Input"],
+Cell[2028, 57, 107, 2, 50, "Input"],
+
+Cell[CellGroupData[{
+Cell[2160, 63, 110, 2, 30, "Input"],
+Cell[2273, 67, 53, 1, 29, "Output"]
+}, Open  ]],
+Cell[2341, 71, 143, 2, 30, "Input"],
+Cell[2487, 75, 461, 9, 190, "Input"],
+
+Cell[CellGroupData[{
+Cell[2973, 88, 276, 5, 110, "Input"],
+Cell[3252, 95, 37, 1, 29, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

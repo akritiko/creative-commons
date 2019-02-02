@@ -1,0 +1,221 @@
+#include <stdio.h>
+
+#define N 5 //Αριθμος κομβων του γραφου
+
+void main()
+{
+  //Ορισμός του πίνακα γειτνίασης του εκαστοτε γραφου
+  int PinakasGeitniasis[N] [N] =
+  {
+    {
+      0, 1, 0, 1, 1
+    },
+    {
+      1, 0, 1, 1, 0
+    },
+    {
+      0, 1, 0, 1, 0
+    },
+    {
+      1, 1, 1, 0, 0
+    },
+    {
+      1, 0, 0, 0, 0
+    }
+
+  };
+
+  //Πληθος μοναδων ανα στήλη
+  int plithosMonadon[N - 1] =
+  {
+    0, 0, 0, 0
+  };
+
+  //Θεσεις μοναδων και πλήθος εμφανισεων (σειρά - στηλη - πληθος εμφ)
+  int theseisMonadon[6] [3] =
+  {
+    {
+      0, 0, 0
+    },
+    {
+      0, 0, 0
+    },
+    {
+      0, 0, 0
+    },
+    {
+      0, 0, 0
+    },
+    {
+      0, 0, 0
+    },
+    {
+      0, 0, 0
+    },
+  };
+
+  //Πίνακας όλων των ζευγνυόντων δένδρων
+  int myCoords[12] [2] =
+  {
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+    {
+      0, 0
+    },
+
+  };
+
+  //ΤΜΗΜΑ 1
+  //Εύρεση πληθους ζευγνυόντων δένδρων και θέσεων μοναδων στον πίνακα γειτνίασης
+
+  //ΤΜΗΜΑ 1
+  int seires = 0;
+  int stiles = 0;
+  int counter1 = 0;
+  int counter2 = 0;
+
+  //ΤΜΗΜΑ 2
+  int i = 0;
+  int j = 0;
+  int k = 0;
+  int l = 0;
+  int plithosEmfaniseon = 0;
+  int mouni = -1;
+  int arxidi = 0;
+
+
+  int pZeygnyonton = 1;
+  int telikoPlithosMonadon = 0;
+  int pMonadon = 0;
+  int thesiTeleutaiasPollaplisStilis = 0;
+
+  for ( stiles = 1; stiles < N; stiles++ )
+  {
+    pMonadon = 0;
+    for ( seires = 0; seires < stiles; seires++ )
+    {
+      if ( PinakasGeitniasis[seires] [stiles] == 1 )
+      {
+        //πληθος μοναδων στηλης
+        pMonadon++;
+
+        //θεσεις μοναδων
+        theseisMonadon[counter1] [0] = seires;
+        theseisMonadon[counter1] [1] = stiles;
+        counter1++;
+      }
+    }
+
+    if ( pMonadon > 1 )
+    {
+      thesiTeleutaiasPollaplisStilis = counter2;
+    }
+
+
+    telikoPlithosMonadon = telikoPlithosMonadon + pMonadon;
+    plithosMonadon[counter2] = pMonadon;
+    counter2++;
+    //τελικο πληθος μοναδων
+    pZeygnyonton = pZeygnyonton * pMonadon;
+  }
+
+  //ΤΜΗΜΑ 2
+  //ΕΥΡΕΣΗ ΟΛΩΝ ΤΩΝ ΖΕΥΓΝΥΟΝΤΩΝ ΔΕΝΔΡΩΝ
+
+
+
+  /* Προσθηκη στην τριτη στηλη του theseisMonadon του πλήθους εμφανίσεων στον MyCoords[] */
+  for ( i = 0; i < N - 1; i++ )
+  {
+    plithosEmfaniseon = pZeygnyonton / plithosMonadon[i];
+    for ( j = l; j < plithosMonadon[i] + l; j++ )
+    {
+      theseisMonadon[j] [2] = plithosEmfaniseon;
+    }
+    l = l + plithosMonadon[i];
+  }
+
+  l = 0;
+
+  //Για καθε στοιχέιο του πίνακα θεσεων
+  for ( arxidi = 0; arxidi < telikoPlithosMonadon; arxidi++ )
+  {
+
+    if ( theseisMonadon[arxidi] [1] == thesiTeleutaiasPollaplisStilis + 1 )
+    {
+      counter1 = 0;
+      counter2 = 0;
+      for ( k = arxidi; k < telikoPlithosMonadon; k++ )
+      {
+        if ( theseisMonadon[k] [1] == thesiTeleutaiasPollaplisStilis + 1 )
+        {
+          counter1++;
+        }
+      }
+      l = thesiTeleutaiasPollaplisStilis + 1;
+      for ( k = 0; k < counter1; k++ )
+      {
+        myCoords[thesiTeleutaiasPollaplisStilis] [0] = theseisMonadon[arxidi] [0];
+        myCoords[thesiTeleutaiasPollaplisStilis] [1] = theseisMonadon[arxidi] [1];
+        arxidi++;
+        thesiTeleutaiasPollaplisStilis = thesiTeleutaiasPollaplisStilis + ( N - 1 );
+      }
+      arxidi--;
+    }
+    else
+    {
+      //Αν l ξεπερνα το μεγεθος του πίνακα myCoords
+      if ( l >= ( pZeygnyonton * ( N - 1 ) ) )
+      {
+        //Κανε το l -> τρεχουσα θεση - φορες που ξεπεράστηκε το μεγεθος του myCoords
+        l = arxidi - mouni;
+      }
+      //Αλλιως
+      else
+      {
+        mouni++; //αύξησε τις φορές που ξεπεράστηκε το μεγεθος του myCoords
+      }
+
+      //εισαγωγή εγγραφων συνεχομενα στον πίνακα
+      for ( k = 0; k < theseisMonadon[arxidi] [2]; k++ )
+      {
+        myCoords[l] [0] = theseisMonadon[arxidi] [0];
+        myCoords[l] [1] = theseisMonadon[arxidi] [1];
+
+        //συνθηκη αλλαγης του l
+        l = l + ( N - 1 );
+      }
+    }
+  }
+}
