@@ -2,9 +2,7 @@
 
 This repository is a collection of original content I created, now released as open content. Unless otherwise explicitly stated the content of this collection is published under [Creative Commons BY-NC-SA 4.0 License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
-__NOTE:__ 
-
-Especially for the source code files included in this collection, unless explicitly stated otherwise, they are available under the [MIT License](https://opensource.org/licenses/MIT).
+__NOTE:__ Especially for the source code files included in this collection, unless explicitly stated otherwise, they are available under the [MIT License](https://opensource.org/licenses/MIT).
 
 ## Sub Collections
 
@@ -36,8 +34,6 @@ The content is available in one of the following languages (and scarcely at both
 ## Functionality
 
 Some of the projects contain executable files (i.e. .exe). Some of the projects are really old (circa 2003) therefore I cannot guarantee that those executables are functional at contemporary machines. 
-
-__DISCLAIMER:__ 
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ON INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
