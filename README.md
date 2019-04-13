@@ -13,7 +13,7 @@ The content is organized to the following sub collections:
 3. __BSc - Thesis:__ My bachelor thesis. Full text in Greek language. Abstract in English and Greek languages.
 4. __MSc - Thesis:__ My master thesis. Full text in Greek language. Abstract in English and Greek languages.
 5. __Presentations:__ TBA
-6. __[Podcasts](https://github.com/akritiko/creative-commons/blob/master/06.%20Podcasts.md):__ Podcasts I have participated as a host or guest. 
+6. __[Podcasts](https://github.com/akritiko/creative-commons/blob/master/06.%20Podcasts.md):__ Podcasts I have participated as a host. 
 
 ## Types of content
 
