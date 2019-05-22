@@ -12,8 +12,7 @@ The content is organized to the following sub collections:
 2. __MSc - Coursework:__ Assignments & Essays during my postgraduate years to the Informatics Dept. of the Aristotle University of Thessaloniki. Mostly in Greek Language.
 3. __BSc - Thesis:__ My bachelor thesis. Full text in Greek language. Abstract in English and Greek languages.
 4. __MSc - Thesis:__ My master thesis. Full text in Greek language. Abstract in English and Greek languages.
-5. __Presentations:__ TBA
-6. __[Podcasts](https://github.com/akritiko/creative-commons/blob/master/06.%20Podcasts.md):__ Podcasts I have participated as a host. 
+5. __[Podcasts](https://github.com/akritiko/creative-commons/blob/master/06.%20Podcasts.md):__ Podcasts I have participated as a host. 
 
 ## Types of content
 
